@@ -1,13 +1,19 @@
-#! /usr/bin/expect
+#!/usr/bin/expect 
 set timeout 30
-spawn sudo systemd-resolve -i enp2s0 --set-domain=www.baidu.com   #enp2s0  is your network card
+#enp2s0  is your network card
+spawn sudo systemd-resolve -i enp2s0 --set-domain=www.baidu.com
 expect "*password*"
-send "***\r" # ***是你的sudo密码
-spawn sudo openvpn --config /home/jiangyj19/Documents/linux_login_vpn/openvpn_linux.conf  #Your profile path
+# *** is your sudo passwd
+send "***\r"
+#Your conf profile path
+spawn sudo openvpn --config /home/jiangyj19/Documents/openvpn/linux/openvpn_linux.conf 
 expect "*password*"
-send "***\r"  # ***是你的sudo密码
+# *** is your sudo passwd
+send "***\r"  
 expect "*Username*"
-send "***\r" # ***是你的工场账号
+# jqz19 is your skyworks account
+send "jqz19\r" 
 expect "*Password*"
-send "***\r" # ***是你的账号密码
+# *** is your passwd of skyworks
+send "***\r" 
 interact
