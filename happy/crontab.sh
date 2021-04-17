@@ -8,4 +8,4 @@ crontab -e
 #| | +--------------- 一个月中的第几天 (1 - 31)
 #| +-------------------- 小时 (0 - 23)
 #+------------------------- 分钟 (0 - 59)
-0 * * * * cd /home/jiangyj19/work/Script/happy && /home/jiangyj19/anaconda3/envs/py36/bin/python happy.py
+0 * * * * cd /home/jiangyj19/work/Script/happy && /home/jiangyj19/anaconda3/envs/py36/bin/python happy.py --one True
